@@ -1,0 +1,26 @@
+name: Bootstrap repository source
+on:
+  push:
+    paths:
+      - .bootstrap/hermes_plugins.tar.gz.b64
+permissions:
+  contents: write
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Expand source tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          base64 -d .bootstrap/hermes_plugins.tar.gz.b64 > /tmp/hermes_plugins.tar.gz
+          test "$(sha256sum /tmp/hermes_plugins.tar.gz | awk '{print $1}')" = "2c063af17640a8ce835464d21e4135a5c4feca8d03b7b39f6cfe4481696d8b98"
+          tar -xzf /tmp/hermes_plugins.tar.gz
+          rm -rf .bootstrap
+          rm -f .github/workflows/bootstrap.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add Gitea Hermes integration and monorepo tooling"
+          git push
