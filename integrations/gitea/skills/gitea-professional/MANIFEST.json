@@ -1,0 +1,259 @@
+{
+  "name": "gitea-professional",
+  "version": "2.0.0",
+  "target_gitea": "1.27.x",
+  "research_baseline": "2026-08-28",
+  "runtime_dependency": "Python 3.10+ standard library + Git 2.x; native gitea-hermes plugin recommended",
+  "integrates": [
+    "Gitea platform operations",
+    "Gitea Actions workflows/runners/security"
+  ],
+  "supersedes_optional_skill": "gitea-actions",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 58,
+      "sha256": "76abcf7fe8cb0ac28182781eb7399c1f958539ba2a806262556c0c8dd8f0d4bf"
+    },
+    {
+      "path": "INSTALL.txt",
+      "bytes": 1686,
+      "sha256": "58bd285d55124b8aa693baa9505241e5e8764e9e0426700a9e9e6b4ab090116c"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1084,
+      "sha256": "48a4e09f1e37ecdf342f9c039810c4dc2aaea078c2d4102ebc54ead9acf94425"
+    },
+    {
+      "path": "README.md",
+      "bytes": 925,
+      "sha256": "a320851a22fdc16ece6b8d6aff0dfe6ce4a82d1b70ee19e4146f680b2d99ae3e"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 13401,
+      "sha256": "ea363b54ecc9ad84f8d24b928c5a6b3151fa66e8d1bd4566375c0a0e37d19560"
+    },
+    {
+      "path": "install.sh",
+      "bytes": 2408,
+      "sha256": "38253cf8e10e7f2bf8cfd09b3d991b349c79f476f9d8805aed214c36339e130a"
+    },
+    {
+      "path": "references/SOURCES.md",
+      "bytes": 3265,
+      "sha256": "512d3fdcbef09d97755d4e57c9752cae47588c594ecf68969929d8d51d141ed8"
+    },
+    {
+      "path": "references/actions/compatibility.md",
+      "bytes": 5341,
+      "sha256": "ac721bcc792e2d5142ecf84a4fb6568025ebd6ab90bf91b02f363575d70f3a57"
+    },
+    {
+      "path": "references/actions/overview.md",
+      "bytes": 5659,
+      "sha256": "8074161803e84fc9f7ebb4119ee065f98fdc455e553a1a404f236baac65c7b2f"
+    },
+    {
+      "path": "references/actions/patterns.md",
+      "bytes": 2742,
+      "sha256": "bc9c4a373861d14b68b2a3a1ebbc78032e8d65519afb9c3d55240aa5c998a8f4"
+    },
+    {
+      "path": "references/actions/runners.md",
+      "bytes": 6702,
+      "sha256": "f6f79adb8d28ded00dc937d39fe74ad8af41b7c1cdcb246d5193a5a5f37a0166"
+    },
+    {
+      "path": "references/actions/security.md",
+      "bytes": 5801,
+      "sha256": "cb258c628c003c52e2308808bbee52af38123a97c486d9aee46908c2b4f5b643"
+    },
+    {
+      "path": "references/actions/sources.md",
+      "bytes": 2808,
+      "sha256": "c43263213c9fe762c8f425641124b11bdb566a79660eaf71f891322360d7125c"
+    },
+    {
+      "path": "references/actions/troubleshooting.md",
+      "bytes": 4334,
+      "sha256": "c2d5cad7be61e937b852e97c06822386912b34f32fe345305288009878f1dddc"
+    },
+    {
+      "path": "references/actions/workflows.md",
+      "bytes": 6587,
+      "sha256": "0665b6b028c280b811f80a03bec62b0aa258c79bc92e1429853f878dfa659ece"
+    },
+    {
+      "path": "references/administration.md",
+      "bytes": 1445,
+      "sha256": "60f9b1118dd2d8bf1c9815c95aae9a6a08a1c42d476e50edb35063bf9c70dee0"
+    },
+    {
+      "path": "references/api-and-auth.md",
+      "bytes": 5533,
+      "sha256": "bf8964dfe9ede1109f808424435cd58763827bae74ba23edfe4cfe67454b705c"
+    },
+    {
+      "path": "references/compatibility.md",
+      "bytes": 1934,
+      "sha256": "34652516d7ea82b2f1c48dd6c2dbd499162d4dca5d3857930fb411b06db0c26f"
+    },
+    {
+      "path": "references/endpoint-map.md",
+      "bytes": 5483,
+      "sha256": "2d982970ab3b2d7ea55d86a90d109f095e7ba1568a120982c4a7b6d8f8ce0dad"
+    },
+    {
+      "path": "references/hermes-integration.md",
+      "bytes": 1065,
+      "sha256": "981b3097494b05293327861f113e2dd21fb0766a64c4bacdc77de741081a0eee"
+    },
+    {
+      "path": "references/issues-and-prs.md",
+      "bytes": 4504,
+      "sha256": "fb9e215dda16ca77a73663b15c663a381228e501a301404026ad65dfde242034"
+    },
+    {
+      "path": "references/orgs-admin-security.md",
+      "bytes": 3669,
+      "sha256": "b8ba47cbe2f26a25716e8b94cc0c84167e614baec8dc1191e71f5f2dcdbe3689"
+    },
+    {
+      "path": "references/patterns.md",
+      "bytes": 1842,
+      "sha256": "169560c43f92febb1a374e02a76aced681e783e624a54701c52210663708c91e"
+    },
+    {
+      "path": "references/releases-wiki-packages.md",
+      "bytes": 2648,
+      "sha256": "653c6c32c92ca3aeb814605f3e49932ad4a120b9c1cc5d93ca6073c395be424f"
+    },
+    {
+      "path": "references/repos-and-git.md",
+      "bytes": 5197,
+      "sha256": "8912619a3b14e295c5041d12aa94816bc0a9533fa1b4eacdb7c546ba12a615fa"
+    },
+    {
+      "path": "references/security.md",
+      "bytes": 2180,
+      "sha256": "25ed2b80c9c3f5c23a062dd0001063735a5b9c3736ddd435bfc6e8c12c3cb929"
+    },
+    {
+      "path": "references/troubleshooting.md",
+      "bytes": 2084,
+      "sha256": "78e0379a67f842af2e1640b0b57122e03d223ef253e0b9117020c6b65c3666c2"
+    },
+    {
+      "path": "references/webhooks.md",
+      "bytes": 3163,
+      "sha256": "a254ae1e43694282d1b3730065953b9113dd3c482672d28f1234299648bec161"
+    },
+    {
+      "path": "scripts/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "scripts/audit_workflow.py",
+      "bytes": 7163,
+      "sha256": "cfceb7eaa6ebf751e6f3552d9c70ca01da65e814e25bda6b2a5803ece5c0a202"
+    },
+    {
+      "path": "scripts/doctor.py",
+      "bytes": 4279,
+      "sha256": "872f845bfcc74df680799cf96c6d7c1daeba188454d0e9f058a0aa0eabfed172"
+    },
+    {
+      "path": "scripts/gitea.py",
+      "bytes": 40980,
+      "sha256": "a24956339c120bcc1da387cf721545200bab067ac775be5a51a2602872977c7a"
+    },
+    {
+      "path": "scripts/gitea_client.py",
+      "bytes": 18877,
+      "sha256": "860bb307df9492e9b8de20d0ebab0345a74d798de8dd649ce1b38e2d1bec1f9f"
+    },
+    {
+      "path": "templates/actions/ci-basic.yaml",
+      "bytes": 251,
+      "sha256": "61b0c5cc692960f370b2755a71702d5fbde9ce55bbecb14fd5f94c28fddbb3d6"
+    },
+    {
+      "path": "templates/actions/container-publish.yaml",
+      "bytes": 850,
+      "sha256": "8bfd8f663b9950964a1450d542a2e7dd778af053e8104e7e6651648d49042491"
+    },
+    {
+      "path": "templates/actions/matrix.yaml",
+      "bytes": 418,
+      "sha256": "bf23d4a143d8483aece0dc5c7a13d68f54e9155c2f5e3488cb434e7f951c8175"
+    },
+    {
+      "path": "templates/actions/pr-checks.yaml",
+      "bytes": 621,
+      "sha256": "226fef831f1d12363a3f1785fcbd9777b39659e13ca735a2991e87333796dfc2"
+    },
+    {
+      "path": "templates/actions/release.yaml",
+      "bytes": 432,
+      "sha256": "4b2734a66a68df8d3da5df3152018d9cb42ca10ece6f184aee60dfaa5caf318a"
+    },
+    {
+      "path": "templates/actions/scheduled-maintenance.yaml",
+      "bytes": 325,
+      "sha256": "a3af1ccc02a3823d9442a622f243def40de251781a0508caf0964c30a7438170"
+    },
+    {
+      "path": "templates/actions/scoped-workflow.yaml",
+      "bytes": 292,
+      "sha256": "20c6dc8608fbffe0ed4a7af0f3120257e0c62f7f929051ff821eea2386a102a2"
+    },
+    {
+      "path": "templates/issue.md",
+      "bytes": 303,
+      "sha256": "67d63f2d0ad6240efbc8d5919e7039b5a25211e906da7ddf9c57c0f608d4162a"
+    },
+    {
+      "path": "templates/pull-request.md",
+      "bytes": 374,
+      "sha256": "0e5bb457196330aa5d49bca91266a49be18b0758688916d99812a0f03c90b7f4"
+    },
+    {
+      "path": "templates/release.md",
+      "bytes": 260,
+      "sha256": "c0be0660dfde195f15c7b3a32007c2d50d83c1ec9afadaab184300faea35b4b3"
+    },
+    {
+      "path": "templates/repo-audit.md",
+      "bytes": 390,
+      "sha256": "9970dfe1ac9d297f9f47517b5af2ac41b9cb507dad2361214b947cdbfc8ffc8a"
+    },
+    {
+      "path": "tests/test_audit_workflow.py",
+      "bytes": 1406,
+      "sha256": "f455f16e892921a3148e0458f3301b1da0e003b436697c88403a0ab53f73440e"
+    },
+    {
+      "path": "tests/test_cli_policy.py",
+      "bytes": 5452,
+      "sha256": "6ff5c97bfc1c21fd6d866283cde3638846926851ba6e2a333784543f196ce65a"
+    },
+    {
+      "path": "tests/test_client.py",
+      "bytes": 6101,
+      "sha256": "38a683781533e2ad6d32e9354027afda48fafc65fd3497e1bf0fdf1e9b0728fc"
+    },
+    {
+      "path": "tests/test_doctor.py",
+      "bytes": 757,
+      "sha256": "2798ab6ca2456511ce0dd39116e3c145105b0518c144eacbd2a055a8a36f93b2"
+    },
+    {
+      "path": "tests/test_package_integrity.py",
+      "bytes": 2824,
+      "sha256": "d5817cda24a295149fe0c104103fb1aa00d91f1357f9ddf27c1c5f8a26459ce3"
+    }
+  ]
+}

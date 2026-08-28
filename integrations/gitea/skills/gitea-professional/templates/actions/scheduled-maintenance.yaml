@@ -1,0 +1,19 @@
+name: Scheduled Maintenance
+
+on:
+  schedule:
+    - cron: "15 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  code: read
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@REPLACE_WITH_REVIEWED_COMMIT_SHA
+
+      - name: Maintenance
+        run: ./ci/maintenance.sh

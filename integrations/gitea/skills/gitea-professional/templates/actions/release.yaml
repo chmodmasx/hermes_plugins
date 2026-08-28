@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  code: read
+  releases: write
+
+jobs:
+  release:
+    runs-on: release-linux
+    steps:
+      - name: Checkout
+        uses: actions/checkout@REPLACE_WITH_REVIEWED_COMMIT_SHA
+
+      - name: Build
+        run: ./ci/build-release.sh
+
+      - name: Create release metadata
+        env:
+          TOKEN: ${{ secrets.GITEA_TOKEN }}
+        run: ./ci/create-gitea-release.sh

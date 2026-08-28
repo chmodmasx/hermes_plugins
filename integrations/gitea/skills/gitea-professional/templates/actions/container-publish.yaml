@@ -1,0 +1,33 @@
+name: Publish OCI Image
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  code: read
+
+jobs:
+  publish:
+    runs-on: release-linux
+    steps:
+      - name: Checkout
+        uses: actions/checkout@REPLACE_WITH_REVIEWED_COMMIT_SHA
+
+      - name: Login to registry
+        env:
+          REGISTRY: ${{ secrets.REGISTRY }}
+          REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
+          REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
+        run: |
+          printf '%s' "$REGISTRY_TOKEN" | \
+            docker login "$REGISTRY" -u "$REGISTRY_USER" --password-stdin
+
+      - name: Build and push
+        env:
+          REGISTRY: ${{ secrets.REGISTRY }}
+          COMMIT_SHA: ${{ gitea.sha }}
+        run: |
+          IMAGE="$REGISTRY/REPLACE_OWNER/REPLACE_IMAGE"
+          docker build -t "$IMAGE:$COMMIT_SHA" .
+          docker push "$IMAGE:$COMMIT_SHA"

@@ -1,0 +1,28 @@
+name: Pull Request Checks
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+permissions:
+  code: read
+
+jobs:
+  verify:
+    runs-on: pr-untrusted
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@REPLACE_WITH_REVIEWED_COMMIT_SHA
+        with:
+          fetch-depth: 0
+
+      - name: Test integration with base branch
+        env:
+          BASE_REF: ${{ gitea.base_ref }}
+        run: |
+          git fetch origin "$BASE_REF"
+          git -c user.name=ci -c user.email=ci@example.invalid \
+            merge --no-edit "origin/$BASE_REF"
+
+      - name: Test
+        run: ./ci/test.sh

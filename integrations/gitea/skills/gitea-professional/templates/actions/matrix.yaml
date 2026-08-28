@@ -1,0 +1,25 @@
+name: Matrix CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  code: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        runtime: ["A", "B", "C"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@REPLACE_WITH_REVIEWED_COMMIT_SHA
+
+      - name: Test runtime
+        env:
+          TEST_RUNTIME: ${{ matrix.runtime }}
+        run: ./ci/test-runtime.sh

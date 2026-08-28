@@ -1,0 +1,44 @@
+name: gitea-hermes
+version: 1.0.0
+description: Native, least-privilege Gitea 1.27.x tools for Hermes Agent
+author: Hermes Gitea Integration
+provides_tools:
+  - gitea_connection_status
+  - gitea_repos_list
+  - gitea_repo_get
+  - gitea_contents_list
+  - gitea_file_get
+  - gitea_branches_list
+  - gitea_commits_list
+  - gitea_commit_status
+  - gitea_issues_list
+  - gitea_issue_get
+  - gitea_prs_list
+  - gitea_pr_get
+  - gitea_pr_files
+  - gitea_pr_commits
+  - gitea_pr_reviews
+  - gitea_actions_runs
+  - gitea_actions_run
+  - gitea_actions_jobs
+  - gitea_actions_job_logs
+  - gitea_actions_artifacts
+  - gitea_runners_list
+  - gitea_releases_list
+  - gitea_webhooks_list
+  - gitea_openapi_search
+  - gitea_branch_create
+  - gitea_issue_create
+  - gitea_issue_update
+  - gitea_issue_comment
+  - gitea_pr_create
+  - gitea_pr_review
+  - gitea_actions_dispatch
+  - gitea_actions_rerun
+  - gitea_release_create
+requires_env:
+  - name: GITEA_BASE_URL
+    description: Canonical URL of the Gitea instance, for example https://git.example.com
+  - name: GITEA_TOKEN
+    description: Least-privilege personal access token for the dedicated Hermes bot account
+    secret: true

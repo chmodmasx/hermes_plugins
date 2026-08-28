@@ -1,0 +1,11 @@
+{
+  "id": "gitea",
+  "name": "Gitea ↔ Hermes",
+  "version": "1.0.0",
+  "target": "Gitea >=1.27.0,<1.28",
+  "baseline": "Gitea 1.27.2",
+  "components": {
+    "plugins": ["gitea-hermes"],
+    "skills": ["gitea-professional"]
+  }
+}

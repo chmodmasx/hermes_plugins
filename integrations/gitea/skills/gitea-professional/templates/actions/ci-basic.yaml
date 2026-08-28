@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  code: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@REPLACE_WITH_REVIEWED_COMMIT_SHA
+
+      - name: Test
+        run: ./ci/test.sh

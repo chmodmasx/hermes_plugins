@@ -1,0 +1,51 @@
+GITEA-PROFESSIONAL 2.0.0 — HERMES AGENT
+Target: Gitea 1.27.x
+
+This package unifies Gitea platform operations and Gitea Actions into one skill.
+
+1) Extract the package.
+
+2) From inside gitea-professional/ run:
+
+   chmod +x install.sh
+   ./install.sh
+
+   Default destination:
+   ~/.hermes/skills/gitea-professional/
+
+3) Configure the non-secret Gitea URL:
+
+   hermes config set skills.config.gitea.base_url https://TU-GITEA
+
+4) Start a NEW Hermes session. On first skill load Hermes can securely request
+   GITEA_TOKEN because the skill declares it as a required environment variable.
+   Do not paste the token into SKILL.md, config.yaml, repository files, or prompts.
+
+5) Run the offline package tests:
+
+   python ~/.hermes/skills/gitea-professional/scripts/audit_workflow.py --help
+   python -m unittest discover -s ~/.hermes/skills/gitea-professional/tests -v
+
+6) Read-only live test:
+
+   python ~/.hermes/skills/gitea-professional/scripts/doctor.py --base-url https://TU-GITEA
+
+7) Hermes smoke test:
+
+   hermes chat --toolsets skills -q "Use gitea-professional to report the Gitea version and my authenticated identity. Do not modify anything."
+
+UPGRADE FROM gitea-professional 1.1.x
+
+   ./install.sh --force
+
+The installer backs up the existing gitea-professional installation before replacing it.
+
+MIGRATION FROM THE OLD gitea-actions SKILL
+
+The standalone gitea-actions skill is not required by 2.0.0. Verify the unified skill first; then remove the old gitea-actions directory separately if desired. The installer intentionally does not delete it automatically.
+
+CUSTOM DESTINATION
+
+   ./install.sh --target-root /ruta/a/skills
+
+This creates /ruta/a/skills/gitea-professional/.
