@@ -2,7 +2,7 @@ name: Bootstrap repository source
 on:
   push:
     paths:
-      - .bootstrap/hermes_plugins.tar.gz.b64
+      - .bootstrap/READY
 permissions:
   contents: write
 jobs:
@@ -14,7 +14,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          base64 -d .bootstrap/hermes_plugins.tar.gz.b64 > /tmp/hermes_plugins.tar.gz
+          cat .bootstrap/part-* | base64 -d > /tmp/hermes_plugins.tar.gz
           test "$(sha256sum /tmp/hermes_plugins.tar.gz | awk '{print $1}')" = "2c063af17640a8ce835464d21e4135a5c4feca8d03b7b39f6cfe4481696d8b98"
           tar -xzf /tmp/hermes_plugins.tar.gz
           rm -rf .bootstrap
